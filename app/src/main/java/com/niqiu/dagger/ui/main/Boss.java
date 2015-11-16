@@ -1,4 +1,4 @@
-package com.niqiu.dagger.DaggerBean;
+package com.niqiu.dagger.ui.main;
 
 import javax.inject.Inject;
 

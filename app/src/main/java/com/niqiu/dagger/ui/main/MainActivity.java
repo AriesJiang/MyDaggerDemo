@@ -1,11 +1,11 @@
-package com.niqiu.dagger;
+package com.niqiu.dagger.ui.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
-import com.niqiu.dagger.DaggerBean.Boss;
-import com.niqiu.dagger.Module.AppModule;
+import com.niqiu.dagger.R;
 
 import javax.inject.Inject;
 
@@ -20,10 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ObjectGraph.create(AppModule.class).inject(this);
+        Log.d("MainActivity", "---onCreate()---" + this);
+        ObjectGraph.create(MainModule.class).inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.textView);
-        textView.setText("我的boss"+boss.getName());
+        textView.setText("我的boss：" + boss.getName());
     }
 }
